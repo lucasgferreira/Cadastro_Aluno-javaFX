@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.controle.Tela">
+    <HBox id="primary" alignment="CENTER_RIGHT" minHeight="50.0" spacing="5.0">
+      <Button id="reload" mnemonicParsing="false" onAction="#onRecaregar" prefHeight="30.0" prefWidth="30.0" />
+
+        <Label text="alunos:" />
+        <Label fx:id="LBqunatidade" text="0" />
+        <Pane HBox.hgrow="ALWAYS" />
+        <StackPane alignment="CENTER_RIGHT">
+          <TextField fx:id="TFpesquisar" promptText="pesquisar">
+            <padding>
+               <Insets bottom="5.0" left="10.0" right="23.0" top="5.0" />
+            </padding></TextField>
+          <Button id="btnlimpar" onAction="#onLimparPesquisa" prefHeight="25.0" prefWidth="25.0" />
+        </StackPane>
+      <padding>
+         <Insets left="5.0" right="5.0" />
+      </padding>
+
+    </HBox>
+    <VBox id="root" minHeight="130.0">
+        <children>
+            <GridPane hgap="5.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <Label text="NOME" />
+                    <Label text="E-MAIL" GridPane.rowIndex="1" />
+                    <Label text="IDADE" GridPane.rowIndex="2" />
+                    <TextField fx:id="TFnome" promptText="nome" GridPane.columnIndex="1" />
+                    <TextField fx:id="TFemail" promptText="e-mail" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <TextField fx:id="TFidade" promptText="idade" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <children>
+                            <Button fx:id="BTnovo" mnemonicParsing="false" onAction="#onNovo" text="Novo" />
+                            <Button fx:id="BTsalvar" mnemonicParsing="false" onAction="#onSalvar" text="Salvar" />
+                            <Button fx:id="BTalterar" mnemonicParsing="false" onAction="#onAlterar" text="Alterar" />
+                            <Button fx:id="BTexcluir" mnemonicParsing="false" onAction="#onExcluir" text="Excluir" />
+                        </children>
+                    </HBox>
+                </children>
+            </GridPane>
+        </children>
+        <padding>
+            <Insets left="5.0" right="5.0" top="10.0" />
+        </padding>
+    </VBox>
+    <TableView fx:id="TValuno" VBox.vgrow="ALWAYS">
+        <columns>
+
+            <TableColumn fx:id="TCmat" prefWidth="75.0" text="MATRÍCULA">
+                <cellValueFactory>
+                    <PropertyValueFactory property="mat" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="TCnome" prefWidth="75.0" text="NOME">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nome" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="TCemail" prefWidth="75.0" text="E-MAIL">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="TCidade" prefWidth="75.0" text="IDADE">
+                <cellValueFactory>
+                    <PropertyValueFactory property="idade" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+
+</VBox>

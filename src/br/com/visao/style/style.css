@@ -1,0 +1,121 @@
+#root{
+  -fx-background-color: white;
+}
+.button{
+  -fx-background-color: white;
+  -fx-effect: dropshadow( one-pass-box , #888 , 3 , 0.0 , 0 , 0 );
+}
+.button: hover{
+  -fx-effect: dropshadow( one-pass-box , #0080FF , 5 , 0.0 , 0 , 0 );
+}
+.button:pressed {
+  -fx-background-color: #eee;
+}
+.button:focused {
+  -fx-effect: dropshadow( one-pass-box , #7B68EE , 5 , 0.0 , 0 , 0 );
+}
+.button:default {
+  -fx-background-color: -fx-focus-color;
+  -fx-text-fill: #ffffff;
+}
+.button:default:hover {
+  -fx-background-color: derive(-fx-focus-color,30%);
+}
+#btnpesquisa{
+  -fx-background-image: url("../icons/fdj.png");
+  -fx-background-repeat: stretch;
+  -fx-background-size: 22 22;
+  -fx-background-position: center;
+  -fx-background-color: transparent;
+}
+#btnlimpar{
+  -fx-background-image: url("../icons/cancel.png");
+  -fx-background-repeat: stretch;
+  -fx-background-size: 22 22;
+  -fx-background-position: center;
+  -fx-background-color: transparent;
+}
+#btnlimpar:hover{
+  -fx-effect: dropshadow( one-pass-box , white , 10 , 0.0 , 0 , 0 );
+}
+#btnpesquisa:hover{
+  -fx-effect: dropshadow( one-pass-box , white , 10 , 0.0 , 0 , 0 );
+}
+#primary{
+  -fx-background-color: #222;
+}
+#primary .label{
+  -fx-text-fill: white;
+}
+
+#reload{
+  -fx-padding: 0.0em 0.0em;
+  -fx-background-color: transparent;
+  -fx-background-image: url("../icons/reload_white.png");
+  -fx-background-repeat: stretch;
+  -fx-background-position: center center;
+  -fx-background-size: 25 25;
+}
+#reload:hover{
+  -fx-effect: dropshadow( one-pass-box , white , 10 , 0.0 , 0 , 0 );
+}
+
+/*===========================tabela style========================*/
+
+.table-view {
+    -fx-base: white;
+    -fx-border-color: #ddd;
+    -fx-control-inner-background: white;
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 2;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #42539d;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 0 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+        transparent
+        transparent
+        derive(-fx-base, 80%)
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-family: "Arial";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+.table-cell {
+    -fx-font-family: "Arial";
+    -fx-alignment: center-left;
+}
+
+.table-row-cell:hover{
+    -fx-background-color: #eee;
+}
+
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+    -fx-base: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
